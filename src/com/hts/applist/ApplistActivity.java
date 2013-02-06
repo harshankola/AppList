@@ -12,8 +12,8 @@ import android.widget.ArrayAdapter;
 
 public class ApplistActivity extends ListActivity {
 
-	private List<ApplicationInfo> apps;
-	private ArrayAdapter<ApplicationInfo> aa;
+	private List<AppInfo> apps;
+	
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -21,14 +21,13 @@ public class ApplistActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.main);
+		setContentView(R.layout.main);
 		// Get Package Manager reference
 		// Get the list of installed apps
-		apps=getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA);
+		
 		// Get the name of app and append (system) tag if its system app
 		// Bind it to list view.
-		aa=new ArrayAdapter<ApplicationInfo>(this, android.R.layout.simple_list_item_1, apps);
-		setListAdapter(aa);
+		
 	}
 
 	@Override
